@@ -1,5 +1,8 @@
-const Node = () => {
-  return {}
+const Node = (node1) => {
+  return {
+    value: node1,
+    next: null
+  }
 }
 
 const Lil = () => {
