@@ -42,7 +42,7 @@ const Lil = () => {
         current = current.next
       }
       current.next = Node(value)
-      console.log(this.head)
+      // console.log(this.head)
     }
     },
 
@@ -53,7 +53,16 @@ const Lil = () => {
     },
 
     removeFromEnd: function() {
-    
+      let current = this.head
+      let previous = current
+      while (current.next !== null){
+        previous = current
+        current = current.next
+      }
+      let removedValue = current.value
+      previous.next = null
+      return removedValue
+
     },
 
     getAt: function(i) {
