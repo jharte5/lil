@@ -7,9 +7,17 @@ const Node = (node1) => {
 
 const Lil = () => {
   return {
-    head: '',
+    head:null,
 
     values: function() {
+      const newArr = []
+      let current = this.head;
+      while (current !== null){
+        newArr.push(current.value)
+        current = current.next
+        
+      }
+      return newArr
 
     },
 
