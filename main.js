@@ -10,19 +10,27 @@ const Lil = () => {
     head:null,
 
     values: function() {
-      const newArr = []
+      const diffArr = []
       let current = this.head;
       while (current !== null){
-        newArr.push(current.value)
+        diffArr.push(current.value)
         current = current.next
         
       }
-      return newArr
+      return diffArr
 
     },
 
     addToStart: function(value) {
-
+      if (this.head === null) {
+        this.head = Node(value)
+      } else if (this.head !== null) {
+        let oldHead = this.head
+        this.head = Node(value)
+        this.head.next = oldHead
+        console.log(oldHead)
+      }
+      
     },
 
     addToEnd: function(value) {
