@@ -66,11 +66,32 @@ const Lil = () => {
     },
 
     getAt: function(i) {
+      if (!this.head){
+        return null
+      }
+      let count = 0
+      let current = this.head
+      while (count <i) {
+        current = current.next
+        count ++
+      }
+      return current.value
     
     },
 
     removeAt: function(i) {
-    
+      if (this.head === null){
+        return null
+      }
+      let count = 0
+      let current = this.head
+
+      while (count < i - 1) {
+        current = current.next
+        count ++
+      }
+      const toRemove = current.next.value
+      return toRemove
     },
   }
 }
